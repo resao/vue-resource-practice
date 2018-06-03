@@ -29,7 +29,12 @@
         },
         methods: {
             submit() {
-                console.log(this.user);
+                this.$http.post('https://vue-http-9a8c3.firebaseio.com/data.json', this.user)
+                    .then(response => {
+                        console.log(response);
+                    }, error => {
+                        console.log(error);
+                    });
             }
         }
     }
