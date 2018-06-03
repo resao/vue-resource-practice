@@ -25,9 +25,7 @@
     </div>
 </template>
 
-<script>
-    const API_URL = 'https://vue-http-9a8c3.firebaseio.com/data.json';
-    
+<script>    
     export default {
         data() {
             return {
@@ -40,7 +38,7 @@
         },
         methods: {
             submit() {
-                this.$http.post(API_URL, this.user)
+                this.$http.post('', this.user)
                     .then(response => {
                         console.log(response);
                     }, error => {
@@ -48,7 +46,7 @@
                     });
             },
             fetchData() {
-                this.$http.get(API_URL)
+                this.$http.get()
                     .then(response => {
                         return response.json();
                     }, error => {
