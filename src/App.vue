@@ -33,22 +33,20 @@
                     username: '',
                     email: ''
                 },
-                users: [],
-                resource: {}
+                users: []
             }
         },
         methods: {
             submit() {
-                /*this.$http.post('data.json', this.user)
+                this.$http.post('', this.user)
                     .then(response => {
                         console.log(response);
                     }, error => {
                         console.log(error);
-                    });*/
-                this.resource.saveAlt(this.user);
+                    });
             },
             fetchData() {
-                this.$http.get('data.json')
+                this.$http.get()
                     .then(response => {
                         return response.json();
                     }, error => {
@@ -58,12 +56,6 @@
                         this.users = data;
                     });
             }
-        },
-        created() {
-            const customActions = {
-                saveAlt: {method: 'POST', url: 'alternative.json'}
-            }
-            this.resource = this.$resource('data.json', {}, customActions);
         }
     }
 </script>
